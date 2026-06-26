@@ -1,4 +1,4 @@
-# 把 C 槽的 Claude 專案記憶備份到這個 repo，並自動 commit / push 到 GitHub。
+﻿# 把 C 槽的 Claude 專案記憶備份到這個 repo，並自動 commit / push 到 GitHub。
 # 每次 Claude 更新了記憶後執行一次，避免關機（還原卡清空 C 槽）後遺失。
 # 用法：在這個資料夾按右鍵「用 PowerShell 執行」，或在終端機跑：
 #   powershell -ExecutionPolicy Bypass -File .\backup-memory.ps1

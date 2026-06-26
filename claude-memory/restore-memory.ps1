@@ -1,4 +1,4 @@
-# 開機後執行這個腳本，把專案記憶還原回 Claude 的 memory 資料夾。
+﻿# 開機後執行這個腳本，把專案記憶還原回 Claude 的 memory 資料夾。
 # 用法：在這個資料夾按右鍵「用 PowerShell 執行」，或在終端機跑：
 #   powershell -ExecutionPolicy Bypass -File .\restore-memory.ps1
 
