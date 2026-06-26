@@ -10,7 +10,8 @@
 ## 檔案說明
 
 - `MEMORY.md`、`scratch-teaching-site.md`：記憶內容本體。
-- `restore-memory.ps1`：開機後用來把記憶還原回 C 槽的腳本。
+- `restore-memory.ps1`：開機後用來把記憶**還原回 C 槽**的腳本。
+- `backup-memory.ps1`：把 C 槽最新記憶**備份到這裡並推上 GitHub**的腳本。
 
 ## 開機後如何還原記憶
 
@@ -23,4 +24,10 @@
 
 ## 更新記憶後記得備份
 
-之後若 Claude 更新了記憶（C 槽那份），記得把新檔複製回這個資料夾並 `git push`，否則關機就丟了。
+之後若 Claude 更新了記憶（C 槽那份），關機就會被還原卡清空。請在**關機前**執行備份：
+```powershell
+powershell -ExecutionPolicy Bypass -File .\backup-memory.ps1
+```
+這支腳本會把 C 槽最新記憶複製過來，並自動 commit / push 到 GitHub。
+
+> 註：本機 D 槽不會被還原，所以專案與 git repo 開機後都還在；只有 C 槽（Claude 記憶）需要靠這套腳本來回搬。
