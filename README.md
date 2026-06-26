@@ -1,5 +1,7 @@
 # Scratch 小小遊戲設計師
 
+🔗 **線上 Demo：** https://chenyuhsu413.github.io/ScratchTeaching/
+
 國小程式啟蒙互動教學網站。用一個個小遊戲（接水果、打地鼠、迷宮逃脫）帶學生認識 Scratch 基礎程式概念。
 網站定位是**教學入口 / 範例展示 / 任務導引**，不是要取代 Scratch 官方編輯器；學生實際編輯仍跳轉 scratch.mit.edu。
 
