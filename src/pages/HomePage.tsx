@@ -3,28 +3,36 @@ import { lessons } from '../data/lessons'
 import LessonCard from '../components/LessonCard'
 
 const features = [
-  { icon: '🎮', title: '從玩遊戲開始', text: '每一課都是一個可以玩的小遊戲，邊玩邊學最有感。' },
-  { icon: '🗂️', title: '任務卡引導', text: '把遊戲拆成一個個小任務，學生一步一步完成，不會卡關。' },
-  { icon: '🌈', title: '概念用顏色分類', text: '事件、迴圈、變數、條件…每種概念都有自己的顏色，好記好懂。' },
-  { icon: '🚀', title: '可自由改造', text: '完成基礎版後，還有挑戰任務，讓學生做出自己的版本。' },
+  { icon: '👩‍🏫', title: '小班制教學', text: '人數不多，老師看得到每個孩子的進度，不怕跟不上。' },
+  { icon: '🏆', title: '每堂完成一個作品', text: '不是只聽講，每一堂課都會做出一個可以玩、可以帶回家秀的小遊戲。' },
+  { icon: '🔤', title: '不用背程式碼', text: '用拖拉積木的方式創作，把心力放在「想法」和「邏輯」上。' },
+  { icon: '🎮', title: '從遊戲中學邏輯', text: '事件、迴圈、條件、變數、座標，都藏在好玩的小遊戲裡自然學會。' },
+  { icon: '🗂️', title: '基礎任務 + 小挑戰', text: '一步步完成基礎任務，學得快的還有挑戰任務可以發揮。' },
+  { icon: '💡', title: '培養解決問題的能力', text: '遇到 bug 自己找原因，從除錯中培養問題解決力與創造力。' },
+]
+
+const courseConcepts = [
+  '事件', '順序執行', '迴圈', '條件判斷', '變數', '座標 x / y', '隨機數', '碰撞偵測',
 ]
 
 export default function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-orange-50 to-slate-50">
+      <section className="bg-gradient-to-b from-orange-50 via-yellow-50 to-slate-50">
         <div className="mx-auto max-w-6xl px-4 py-16 text-center">
           <span className="inline-block rounded-full bg-orange-100 px-4 py-1 text-sm font-semibold text-orange-700">
-            國小程式啟蒙 · 互動教學
+            國小三、四年級 · Scratch 程式先修課
           </span>
           <h1 className="mt-5 text-4xl font-extrabold text-slate-800 sm:text-5xl">
-            Scratch 小小遊戲設計師
+            小小遊戲設計師
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
-            用一個個好玩的小遊戲，學會 Scratch 程式的第一步。
-            <br className="hidden sm:block" />
-            從接水果、打地鼠到迷宮逃脫，做中學、玩中懂。
+          <p className="mt-3 text-xl font-bold text-orange-600 sm:text-2xl">
+            零基礎也能做出自己的小遊戲！
+          </p>
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-slate-600">
+            專為國小三、四年級設計，透過接水果、打地鼠、迷宮挑戰等小遊戲，
+            讓孩子用拖拉積木的方式，學會基礎程式邏輯。
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -43,9 +51,8 @@ export default function HomePage() {
           </div>
 
           <div className="mx-auto mt-8 flex max-w-xl flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-500">
-            <span>👩‍🏫 適合老師上課投影</span>
-            <span>🧒 適合學生自己看</span>
-            <span>👪 適合招生成果展示</span>
+            <span>🧒 適合對象：國小三、四年級</span>
+            <span>✏️ 無程式基礎也可以參加</span>
           </div>
         </div>
       </section>
@@ -53,7 +60,10 @@ export default function HomePage() {
       {/* 課程特色 */}
       <section className="mx-auto max-w-6xl px-4 py-14">
         <h2 className="text-center text-2xl font-extrabold text-slate-800">課程特色</h2>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <p className="mx-auto mt-2 max-w-2xl text-center text-slate-500">
+          這不是只玩遊戲，而是讓孩子從玩遊戲，進一步學會設計遊戲。
+        </p>
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
             <div key={f.title} className="rounded-2xl border border-slate-200 bg-white p-6 text-center">
               <div className="text-4xl">{f.icon}</div>
@@ -100,15 +110,47 @@ export default function HomePage() {
       {/* 課程列表 */}
       <section className="mx-auto max-w-6xl px-4 py-14">
         <div className="flex items-end justify-between">
-          <h2 className="text-2xl font-extrabold text-slate-800">目前提供的小遊戲課程</h2>
+          <div>
+            <h2 className="text-2xl font-extrabold text-slate-800">目前提供的小遊戲課程</h2>
+            <p className="mt-1 text-sm text-slate-500">難度由淺到深，建議從第 1 課開始。</p>
+          </div>
           <Link to="/lessons" className="text-sm font-semibold text-orange-600 hover:text-orange-700">
             看全部 →
           </Link>
         </div>
-        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {lessons.map((lesson) => (
             <LessonCard key={lesson.id} lesson={lesson} />
           ))}
+        </div>
+        <div className="mt-8 flex flex-wrap justify-center gap-2">
+          {courseConcepts.map((c) => (
+            <span
+              key={c}
+              className="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-600"
+            >
+              {c}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      {/* 給家長的話 */}
+      <section className="bg-gradient-to-b from-slate-50 to-white py-14">
+        <div className="mx-auto max-w-3xl px-4 text-center">
+          <span className="text-3xl">👪</span>
+          <h2 className="mt-2 text-2xl font-extrabold text-slate-800">給家長的話</h2>
+          <p className="mt-4 leading-relaxed text-slate-600">
+            孩子不是只玩遊戲，而是開始學會「設計遊戲」。
+            在完成接水果、打地鼠、迷宮挑戰的過程中，孩子會自然學會事件、迴圈、條件判斷、變數、座標與互動控制，
+            同時培養問題解決力與創造力。每一堂課都有看得見的作品，孩子帶得走、您也看得到。
+          </p>
+          <Link
+            to="/lessons"
+            className="mt-6 inline-block rounded-xl bg-orange-500 px-6 py-3 font-bold text-white transition hover:bg-orange-600"
+          >
+            看看孩子會做出什麼 →
+          </Link>
         </div>
       </section>
     </div>

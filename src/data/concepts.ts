@@ -35,15 +35,18 @@ const conceptCategory: Record<string, ConceptCategory> = {
   綠旗: 'event',
   鍵盤事件: 'event',
   鍵盤偵測: 'event',
+  鍵盤控制: 'event',
   角色點擊事件: 'event',
   廣播: 'event',
   廣播訊息: 'event',
 
   動作: 'motion',
+  移動: 'motion',
   座標: 'motion',
   'x 座標': 'motion',
   'y 座標': 'motion',
   座標移動: 'motion',
+  造型: 'motion',
   造型切換: 'motion',
   分身: 'motion',
 
@@ -62,6 +65,10 @@ const conceptCategory: Record<string, ConceptCategory> = {
   變數: 'variable',
   分數變數: 'variable',
   隨機數: 'variable',
+  倒數計時: 'variable',
+
+  說話: 'misc',
+  音效: 'misc',
 
   碰撞偵測: 'sensing',
   碰到顏色偵測: 'sensing',

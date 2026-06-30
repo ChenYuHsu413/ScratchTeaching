@@ -19,9 +19,21 @@ const coreConcepts: { category: ConceptCategory; title: string; text: string; ex
   },
   {
     category: 'control',
+    title: '順序執行',
+    text: '程式會「由上往下」一塊一塊執行。上面的積木先做，下面的後做。',
+    example: '先說話 → 再移動 → 再換造型',
+  },
+  {
+    category: 'control',
     title: '迴圈',
     text: '迴圈就是「一直重複做」。不用一直複製積木，放進重複執行就會一遍又一遍。',
     example: '重複執行 → 水果一直往下掉',
+  },
+  {
+    category: 'variable',
+    title: '隨機數',
+    text: '隨機數就是「每次都不一樣的數字」。用它讓水果或地鼠出現在不同位置。',
+    example: 'x 設成 隨機取 -200 到 200',
   },
   {
     category: 'condition',
