@@ -27,8 +27,8 @@ const l1: Lesson = {
   difficulty: '入門',
   estimatedTime: threeHours,
   concepts: ['介面', '事件', '順序執行', '動作積木', '外觀積木'],
-  scratchProjectId: '',
-  scratchProjectUrl: '',
+  scratchProjectId: '1350288484',
+  scratchProjectUrl: 'https://scratch.mit.edu/projects/1350288484',
   accent: 'from-sky-400 to-blue-500',
   emoji: '🐱',
   goals: [
@@ -113,8 +113,8 @@ const l2: Lesson = {
   difficulty: '入門',
   estimatedTime: threeHours,
   concepts: ['鍵盤控制', 'x 座標', 'y 座標', '重複偵測按鍵'],
-  scratchProjectId: '',
-  scratchProjectUrl: '',
+  scratchProjectId: '1350294956',
+  scratchProjectUrl: 'https://scratch.mit.edu/projects/1350294956',
   accent: 'from-sky-400 to-indigo-500',
   emoji: '🕹️',
   goals: [
@@ -158,8 +158,8 @@ const l3: Lesson = {
   difficulty: '入門',
   estimatedTime: threeHours,
   concepts: ['造型切換', '音效', '等待', '迴圈', '動畫節奏'],
-  scratchProjectId: '',
-  scratchProjectUrl: '',
+  scratchProjectId: '1350296507',
+  scratchProjectUrl: 'https://scratch.mit.edu/projects/1350296507',
   accent: 'from-cyan-400 to-sky-500',
   emoji: '💃',
   goals: [
@@ -203,8 +203,8 @@ const l4: Lesson = {
   difficulty: '入門',
   estimatedTime: threeHours,
   concepts: ['順序執行', '角色對話', '背景切換', '顯示與隱藏', '簡單廣播'],
-  scratchProjectId: '',
-  scratchProjectUrl: '',
+  scratchProjectId: '1350298984',
+  scratchProjectUrl: 'https://scratch.mit.edu/projects/1350298984',
   accent: 'from-blue-400 to-violet-500',
   emoji: '📖',
   goals: [
