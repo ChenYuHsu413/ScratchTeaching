@@ -43,18 +43,29 @@ export interface FAQ {
   answer: string
 }
 
+/** 課程階段，用來在課程總覽頁分組顯示。 */
+export type Stage =
+  | 'Scratch 基礎'
+  | '接水果遊戲'
+  | '打地鼠遊戲'
+  | '迷宮挑戰'
+  | '綜合整理'
+
 /**
  * 課程資料。
- * status 用來區分「完整課程」與「只有介紹頁」的課程：
- * - 'full'：有完整任務卡（例如第 1 課）
- * - 'intro'：只有課程介紹（例如第 2、3 課）
+ * order 即「第幾堂」（堂數）；stage 用來在課程總覽頁分組。
  */
 export interface Lesson {
   id: string
+  /** 第幾堂（1～12）。 */
   order: number
+  /** 所屬階段，用於課程總覽分組。 */
+  stage: Stage
   title: string
   subtitle: string
   description: string
+  /** 一句話作品成果，顯示在課程卡上。 */
+  outcome: string
   targetGrades: string
   difficulty: Difficulty
   estimatedTime: string
@@ -63,10 +74,10 @@ export interface Lesson {
   scratchProjectId: string
   /** Scratch 專案完整連結，留空字串代表尚未設定。 */
   scratchProjectUrl: string
-  status: 'full' | 'intro'
   /** 課程卡封面用的代表顏色（Tailwind 漸層 class）。 */
   accent: string
   emoji: string
+  /** 學習目標（我會……）。 */
   goals: string[]
   tasks: Task[]
   challenges: Challenge[]

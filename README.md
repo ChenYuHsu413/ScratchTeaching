@@ -1,8 +1,8 @@
-# 小小遊戲設計師：Scratch 程式先修課
+# 小小遊戲設計師：Scratch 程式先修班
 
 🔗 **線上 Demo：** https://chenyuhsu413.github.io/ScratchTeaching/
 
-專為**國小三、四年級**設計的 Scratch 程式先修互動教學網站。用一個個小遊戲（會動的小角色、接水果、打地鼠、迷宮挑戰）帶孩子在正式深入學 Scratch 之前，先建立程式邏輯與成就感。
+專為**國小三、四年級**設計的 Scratch 程式先修互動教學網站。每週 1 堂、每堂 3 小時、3 個月共 **12 堂**，以現場教學與實作為主，帶孩子完成角色動畫、互動故事、接水果、打地鼠、迷宮挑戰等作品，最後依學生狀況進行作品升級與分享。
 網站定位是**教學入口 / 範例展示 / 任務導引**，不是要取代 Scratch 官方編輯器；學生實際編輯仍跳轉 scratch.mit.edu。
 
 ## 技術
@@ -24,14 +24,13 @@ npm run preview  # 預覽打包後的成品
 
 | 路徑 | 內容 |
 | --- | --- |
-| `/` | 首頁：課程介紹、特色、Scratch 是什麼、課程列表、給家長的話 |
-| `/lessons` | 課程總覽（4 堂課的卡片 + 未來進階班展望） |
-| `/lessons/moving-sprite` | 第 1 課 會動的小角色（任務卡、挑戰、常見錯誤、教師提示） |
-| `/lessons/catch-fruit` | 第 2 課 接水果遊戲（最完整：6 個任務卡、挑戰、常見錯誤、教師提示） |
-| `/lessons/whack-mole` | 第 3 課 打地鼠遊戲（任務卡、挑戰、常見錯誤、教師提示） |
-| `/lessons/maze-escape` | 第 4 課 迷宮挑戰（任務卡、挑戰、常見錯誤、教師提示） |
+| `/` | 首頁：課程定位、快速資訊、特色、給家長的話、Scratch 是什麼、12 堂課表 |
+| `/lessons` | 課程總覽：12 堂依「階段」分組（Scratch 基礎 / 接水果 / 打地鼠 / 迷宮 / 綜合整理） |
+| `/lessons/:id` | 各堂課詳細頁：目標、概念、作品成果、Scratch iframe、任務卡、小挑戰（選做）、常見錯誤、教師提示 |
 | `/concepts` | Scratch 基礎概念頁 |
-| `/teacher` | 教師備課頁 |
+| `/teacher` | 教師備課頁：3 小時節奏表、環境檢查、教學提醒 |
+
+12 堂課程 id（依序）：`meet-scratch`、`arrow-keys`、`animation-sound`、`interactive-story`、`catch-fruit-1`、`catch-fruit-2`、`catch-fruit-3`、`whack-mole-1`、`whack-mole-2`、`maze-1`、`maze-2`、`review-upgrade`。
 
 ## 資料夾結構
 
@@ -57,7 +56,7 @@ src/
 1. 在 Scratch 找到要嵌入的專案，網址長這樣：
    `https://scratch.mit.edu/projects/123456789/`
    其中 `123456789` 就是 **projectId**。
-2. 打開 `src/data/lessons.ts`，找到對應課程（例如 `catch-fruit`），填入兩個欄位：
+2. 打開 `src/data/lessons.ts`，找到對應課程（例如 `catch-fruit-2`），填入兩個欄位：
 
    ```ts
    scratchProjectId: '123456789',
@@ -73,7 +72,7 @@ src/
 
 ## 如何新增一堂課
 
-在 `src/data/lessons.ts` 複製一個 `Lesson` 物件，改 `id`、`order` 與內容，加進 `lessons` 陣列即可。
+在 `src/data/lessons.ts` 複製一個 `Lesson` 物件，改 `id`、`order`（第幾堂）、`stage`（所屬階段，決定總覽分組）、`outcome`（作品成果）與內容，加進 `lessons` 陣列即可。
 若新概念需要對應顏色，在 `src/data/concepts.ts` 的 `conceptCategory` 加一行（沒對應到的概念會顯示灰色）。
 
 ## 部署到 GitHub Pages

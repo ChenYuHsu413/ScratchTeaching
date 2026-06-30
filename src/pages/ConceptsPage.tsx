@@ -31,8 +31,8 @@ const coreConcepts: { category: ConceptCategory; title: string; text: string; ex
   },
   {
     category: 'variable',
-    title: '隨機數',
-    text: '隨機數就是「每次都不一樣的數字」。用它讓水果或地鼠出現在不同位置。',
+    title: '隨機',
+    text: '隨機就是「每次都不一樣」。用它讓水果或地鼠每次出現在不同位置。',
     example: 'x 設成 隨機取 -200 到 200',
   },
   {
@@ -55,9 +55,15 @@ const coreConcepts: { category: ConceptCategory; title: string; text: string; ex
   },
   {
     category: 'sensing',
-    title: '偵測',
-    text: '偵測就是讓角色「感覺到」周圍的東西，例如有沒有碰到別的角色或某個顏色。',
-    example: '如果 碰到 邊緣 → 反彈',
+    title: '碰撞偵測',
+    text: '判斷角色有沒有「碰到另一個角色」。接水果、打地鼠都用得到。',
+    example: '如果 碰到 籃子 → 分數加 1',
+  },
+  {
+    category: 'sensing',
+    title: '顏色偵測',
+    text: '判斷角色有沒有「碰到某個顏色」，例如迷宮的牆壁顏色。',
+    example: '如果 碰到 牆壁顏色 → 回到起點',
   },
 ]
 

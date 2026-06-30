@@ -51,11 +51,17 @@ export default function LessonDetailPage() {
         <div className="flex items-center gap-3">
           <span className="text-5xl">{lesson.emoji}</span>
           <div>
-            <p className="text-sm font-bold text-white/90">第 {lesson.order} 課</p>
+            <p className="text-sm font-bold text-white/90">
+              第 {lesson.order} 堂 · {lesson.stage}
+            </p>
             <h1 className="text-3xl font-extrabold drop-shadow">{lesson.title}</h1>
           </div>
         </div>
         <p className="mt-3 text-white/95">{lesson.subtitle}</p>
+        <div className="mt-3 inline-block rounded-xl bg-white/85 px-4 py-2 text-slate-700">
+          <span className="text-sm font-semibold text-orange-500">🏆 今天會做出：</span>
+          <span className="font-bold">{lesson.outcome}</span>
+        </div>
         <div className="mt-4 flex flex-wrap gap-2 text-sm">
           <span className="rounded-full bg-white/80 px-3 py-1 font-semibold text-slate-700">
             🎓 {lesson.targetGrades}
@@ -167,14 +173,23 @@ export default function LessonDetailPage() {
         </Section>
       )}
 
-      {/* 挑戰任務 */}
+      {/* 小挑戰（選做） */}
       {lesson.challenges.length > 0 && (
-        <Section title="🚀 挑戰任務（進階）">
+        <Section title="🚀 小挑戰（選做）">
+          <p className="mb-3 text-sm text-slate-500">
+            這些是<span className="font-semibold text-orange-600">選做任務</span>，
+            完成基礎任務後行有餘力再試，不用有壓力。
+          </p>
           <div className="grid gap-3 sm:grid-cols-2">
             {lesson.challenges.map((ch) => (
               <div key={ch.id} className="rounded-xl border border-slate-200 bg-white p-4">
                 <div className="mb-2 flex items-center justify-between gap-2">
-                  <h4 className="font-bold text-slate-800">{ch.title}</h4>
+                  <h4 className="flex items-center gap-2 font-bold text-slate-800">
+                    <span className="rounded bg-purple-100 px-1.5 py-0.5 text-xs font-bold text-purple-700">
+                      選做
+                    </span>
+                    {ch.title}
+                  </h4>
                   <DifficultyBadge difficulty={ch.difficulty} />
                 </div>
                 <p className="text-sm text-slate-600">{ch.description}</p>
@@ -215,6 +230,16 @@ export default function LessonDetailPage() {
           </div>
         </Section>
       )}
+
+      {/* 回到課程總覽 */}
+      <div className="mt-10 text-center">
+        <Link
+          to="/lessons"
+          className="inline-block rounded-xl border border-slate-300 bg-white px-6 py-3 font-bold text-slate-700 transition hover:bg-slate-50"
+        >
+          ← 回到課程總覽
+        </Link>
+      </div>
     </div>
   )
 }
